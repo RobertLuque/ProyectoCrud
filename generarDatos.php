@@ -1,5 +1,5 @@
 <?php
-    for($i = 402 ; $i <= 500; $i++){
+    for($i = 0 ; $i <= 250; $i++){
         $numberRand=rand(1,3);
 
         switch ($numberRand) {
@@ -14,23 +14,17 @@
                 break;
         }
 
-        $numberAnio=rand(1,4);
+        $numberAnio=rand(1,3);
 
         switch ($numberAnio) {
             case 1:
-                $anio = 2020;
-                break;
-            case 2:
                 $anio = 2021;
                 break;
-            case 3:
+            case 2:
                 $anio = 2022;
                 break;
-            case 4:
+            case 3:
                 $anio = 2023;
-                break;
-            case 5:
-                $anio = 2024;
                 break;
         }
 
