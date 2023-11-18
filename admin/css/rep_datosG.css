@@ -1,0 +1,77 @@
+body{
+    margin: 0;
+}
+/*Grafico*/
+.graficosInformacion{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    flex-direction: row;
+    width: 100%;
+}
+.grafico,.graficoMeses{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 80vh;
+    text-align: left;
+    color: white;
+}
+.graficoMeses{
+    width: 60%;
+}
+.grafico{
+    width: 25%;
+}
+.grafico table.datosInfo{
+    padding: 10%;
+}
+.grafico table.datosInfo tr td{
+    padding: 10px 0;
+}
+.aniosGrafico{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5vh;
+}
+.aniosGrafico .anios{
+    background-color: orange;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 20px;
+}
+.aniosGrafico .anios p{
+    margin: 0;
+}
+
+.aniosGrafico .anios:hover{
+    padding: 15px 25px!important;
+    font-size: 19px;
+}
+
+/*Boton de Reportes Generales*/
+a.regresar , a.datosGenerales{
+    padding: 0 3%;
+    text-decoration:none;
+}
+a.regresar p, a.datosGenerales p{
+    margin: 5px 0;
+    font-size: 24px;
+}
+a.regresar{
+    border-radius: 15px 0 0 0 ;
+    background-color: #FF665C;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+/*Boton Activo del Año*/
+.activeAnio {
+    padding: 15px 25px!important;
+}
+.activeAnio p{
+    color: greenyellow;
+    font-size: 19px;
+}

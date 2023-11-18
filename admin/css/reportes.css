@@ -1,0 +1,436 @@
+body{
+    margin: 0;
+}
+.boxPadre{
+    display: flex;
+    flex-direction: column;
+}
+.boxIzquierda{
+    display: flex;
+    padding: 1% 1% 0.2% 1%;
+    width: 95%;
+    height: 76vh;
+}
+
+.registroLargo p{
+    margin: 0;
+    font-size: 17px;
+}
+.registroLargo{
+    display: flex;
+    text-align: end;
+    margin: 1.5% 0;
+}
+.registroLargo input{
+    margin: 0 10px;
+    height: 22px;
+    border-radius: 25px;
+}
+
+/**Estados INICIO*/
+.estados{
+    margin: 20px 0!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.estados label, .estados input[type="radio"]{
+    cursor: pointer;
+}
+.estados label{
+    font-size: 20px;
+    color: white;
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+}
+.estados label.aceptado{
+    color: #69FF43;
+}
+.estados label.archivado{
+    color: #FDEC54;
+}
+.estados label.rechazado{
+    color: #FF665C;
+}
+
+/*!ocultar*/
+.content-input input,
+.content-select select{
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+.content-input input{
+	visibility: hidden;
+	position: absolute;
+	right: 0;
+}
+
+/*!personalizar*/
+
+.content-input{
+	position: relative;
+	margin-bottom: 30px;
+	padding:5px 0 5px 60px; /* Damos un padding de 60px para posicionar el elemento <i> en este espacio*/
+	display: block;
+}
+
+/* Estas reglas se aplicarán a todos las elementos i después de cualquier input*/
+.content-input input + i{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.estados label.todo input + i{
+    border:2px solid white;
+}
+.estados label.aceptado input + i{
+    border:2px solid #69FF43;
+}
+
+.estados label.archivado input + i{
+    border:2px solid #FDEC54;
+}
+
+.estados label.rechazado input + i{
+    border:2px solid #FF665C;
+}
+/* Estas reglas se aplicarán a todos los i despues de un input de tipo radio*/
+.content-input input[type=radio] + i{
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    left: 15px;
+    top: 5px;
+}
+
+/*!circulo centro*/
+
+.content-input input[type=radio] + i:before{
+	content: '';
+	display: block;
+	height: 12px;
+	width: 12px;
+	border-radius: 100%;
+	position: absolute;
+	z-index: 1;
+	top: 4px;
+	left: 4px;
+	transition: all 0.25s ease; /* Todas las propiedades | tiempo | tipo movimiento */
+	transform: scale(0) /* Lo reducimos a 0*/ ;
+	opacity: 0; /* Lo ocultamos*/
+}
+
+.estados label.todo input[type=radio] + i:before{
+	background: white;
+}
+
+.estados label.aceptado input[type=radio] + i:before{
+	background: #69FF43;
+}
+
+.estados label.archivado input[type=radio] + i:before{
+    background:#FDEC54;
+}
+
+.estados label.rechazado input[type=radio] + i:before{
+    background: #FF665C;
+}
+
+/*!efectos */
+
+.content-input input[type=radio]:checked + i:before{
+	transform: scale(1);
+	opacity: 1;
+}
+.estados label.todo:hover input[type=radio]:not(:checked) + i{
+	background: #FFFFFF80;
+}
+.estados label.aceptado:hover input[type=radio]:not(:checked) + i{
+	background: #69FF4380;
+}
+.estados label.archivado:hover input[type=radio]:not(:checked) + i{
+    background:#FDEC5480;
+}
+.estados label.rechazado:hover input[type=radio]:not(:checked) + i{
+    background: #FF665C80;
+}
+
+
+/**Estados FIN*/
+
+/*barra izquierda busqueda*/
+.registroLargo p{
+    font-weight: 600;
+}
+.registroLargo input{
+    width: 30%;
+    padding: 0 1%!important;
+}
+
+/*Buscador Izquierda*/
+.resultsBusqueda{
+background-color: #FFFFFF80;
+width: 100%;
+}
+
+.boxIzquierda .resultsBusqueda table.tableDatos tr.principal{
+    background-color: #3E7DC4;
+    border-radius: 15px;
+}
+.boxIzquierda .resultsBusqueda table.tableDatos tr.principal th{
+    padding: 10px;
+}
+.boxIzquierda .resultsBusqueda table.tableDatos tr td{
+    padding: 10px;
+}
+.boxIzquierda th,.boxIzquierda td {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+.boxIzquierda th{
+    border-top: 1px solid white;
+    position: sticky;
+}
+
+.boxIzquierda th:first-child{
+    border-left: 1px solid white;
+    border-radius: 20px 0 0 0;
+}
+/*redondear*/
+.resultsBusqueda{
+    border-radius: 20px 10px 10px 20px;
+}
+/*Scrooll Bar*/
+.resultsBusqueda{
+    height: 74vh;
+    width: 80%;
+    overflow: hidden;
+    overflow-y: scroll;
+    overflow-x: scroll;
+}
+.resultsBusqueda::-webkit-scrollbar-thumb{
+    background-color: #3E7DC4;
+    border: 2px solid white;
+    border-radius: 25px;
+    width: 15px;
+}
+.resultsBusqueda::-webkit-scrollbar {
+    background-color: white;
+    border-radius: 25px;
+    width: 15px;
+}
+/**Cambio de colores estados*/
+.resultsBusqueda .tableDatos .aceptado td{
+    /*color: #69FF43;*/
+    color: #008f39;
+}
+.resultsBusqueda .tableDatos .archivado td{
+    /*color: #FDEC54;*/
+    color: #FFFF00;
+}
+.resultsBusqueda .tableDatos .rechazado td{
+    /*color: #FF665C;*/
+    color: #FF0000;
+}
+/*Quedarse quieto arriba*/
+.boxIzquierda tbody{
+    position: relative;
+    width: 100%;
+}
+.principal{
+    position: sticky;
+    top: 0;
+}
+tr.principal {
+    text-align: center;
+}
+.tableDatos{
+    position: relative;
+}
+/*Botones Acciones CRUD*/
+/*Posicionar botones al costado*/
+.btnAcciones{
+    display: flex;
+    flex-direction: row;
+}
+.btnCambio, .btnDelete{
+    width: 50%;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin: 0 3px;
+}
+/*Cambio*/
+.btnCambio{
+    background-color: #FDEC54;
+}
+/*Eliminar*/
+.btnDelete{
+    background-color: #FD5454;
+}
+
+/*Boton de regresar*/
+.boxButtons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    left: 10%;
+}
+/*Boton de Reportes Generales*/
+a.regresar , a.datosGenerales{
+    padding: 0 3%;
+    text-decoration:none;
+}
+a.regresar p, a.datosGenerales p{
+    margin: 5px 0;
+    font-size: 24px;
+}
+a.regresar{
+    border-radius: 15px 0 0 0 ;
+    background-color: #FF665C;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+a.datosGenerales{
+    border-radius: 15px ;
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+.grafico{ /*Box Grande de Otro*/
+    width: 20%;
+}
+/*Barras de Progreso :D */
+.boxPorcentajes{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.container{
+    position: relative;
+    width: 100%;
+    background-color: rgb(0, 0, 0, .2);
+    padding: 0 20px;
+    margin: 0 0px 0 5px;
+}
+.container .barra{
+    margin: 20px 5px;
+}
+.container .barra p{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.container .barra .aceptado,.container .barra .archivado,.container .barra .rechazado{
+    position: relative;
+    width: 100%;
+    height: 6px;
+    background-color: #999;
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 5px 0;
+}
+:root {
+    --aceptado: 0%;
+    --archivado: 0%;
+    --rechazado: 0%;
+}
+
+.container .barra .aceptado::before,.container .barra .archivado::before,.container .barra .rechazado::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    animation-fill-mode: forwards;
+    width: 0;
+}
+.container .barra .aceptado::before{
+    animation: barraAceptado 2s forwards;
+}
+.container .barra .archivado::before{
+    animation: barraArchivado 2s forwards;
+}
+.container .barra .rechazado::before{
+    animation: barraRechazado 2s forwards;
+}
+@keyframes barraAceptado {
+    100%{
+        width: var(--aceptado);
+    }
+}
+@keyframes barraArchivado {
+    100%{
+        width: var(--archivado);
+    }
+}
+@keyframes barraRechazado {
+    100%{
+        width: var(--rechazado);
+    }
+}
+
+.container .barra .aceptado::before{
+    background-color: #69FF43;
+}
+.container .barra .archivado::before{
+    background-color: #FDEC54;
+}
+.container .barra .rechazado::before{
+    background-color: #FF665C;
+}
+/*linea*/
+.linea{
+    position: relative;
+    width: 100%;
+    left:  15px;
+}
+/*Tabla Informacion*/
+.datosInfo,.datosInfoTotal{
+    width: 100%;
+    position: relative;
+    left: 5%;
+}
+.datosInfo tr:first-child td{
+    padding: 20px 0 5px 0!important;
+}
+.datosInfo tr td{
+    padding: 5px 0!important;
+}
+#aceptados,#archivados,#rechazados,#total{
+    text-align: right;
+}
+/*Botones de reporte*/
+.generarReportes{
+    display: flex;
+    justify-content: center;
+}
+/*Boton de REPORTE POR EXCEL*/
+.excel,.pdf{
+    width: auto;
+    border-radius: 15px;
+}
+.excel p,.pdf p{
+    width: auto;
+    margin: 12px;
+    font-size: 20px;
+}
+.excel{
+    background-color: #00DC43;
+    margin: 0 15px 0 0;
+}
+.pdf{
+    background-color: #E83A13;
+    margin: 0 0 0 15px;
+}

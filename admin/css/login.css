@@ -1,0 +1,63 @@
+.boxLogin, .login,.btnCenter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.boxLogin{
+    width: 100%;
+    height: 100vh;
+}
+.login{
+    padding: 1% 0;
+    background-color: #FFFFFF80;
+    border-radius: 25px;
+    width: 25%;
+}
+.login form{
+    width: 90%;
+}
+.login .registroLargo{
+    display: flex;
+    text-align: end;
+    margin: 5% 0;
+}
+.login .registroLargo input{
+    margin: 0 10px;
+    height: 22px;
+    border-radius: 25px;
+    width: 45%;
+    padding: 0 5%;
+}
+.login .registroLargo p{
+    text-align: center;
+    margin: 0;
+    width: 35%;
+    font-size: 20px;
+}
+.login .registroLargo input.btnIngresar {
+    font-family: 'Oswald', sans-serif;
+    width: 80%;
+    height: 35px;
+    outline: none;
+    color: white;
+    font-size: 22px;
+    background-color: #FF665C;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    margin: 10px 0 0px;
+}
+.login .registroLargo input.btnIngresar:hover{
+    width: 100%;
+    height: 37px;
+}
+.mensajeAlert{
+    background-color: #FF4E39;
+    border-radius: 15px;
+    padding: 6px;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+}

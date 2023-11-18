@@ -1,0 +1,35 @@
+body{
+    background: #3E7DC4;
+}
+input{
+    outline: none;
+    border:1px solid #7B7B7B;
+    padding: 0 2%;
+}
+input:focus{
+    outline: none;
+}
+
+h1, h2, h3, h4, p, table td{
+    color: white;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+h1, h2{
+    text-align: center;
+    font-weight: 600;
+}
+h1{
+    font-size: 34px;
+}
+h4{
+    font-weight: 530;
+    font-size: 28px;
+    text-align: center;
+}
+a:link, a:visited, a:active {
+    text-decoration:none;
+}

@@ -1,0 +1,341 @@
+
+.boxPadre{
+    display: flex;
+}
+.boxIzquierda{
+    padding: 1%;
+    width: 50%;
+}
+.boxDerecha{
+    margin: 1% 0;
+    width: 50%;
+    background-color: #FFFFFF80;
+    border-radius: 25px;
+    padding: 1% 0 0 0;
+    height: 100%;
+}
+.boxDerecha h4{
+    margin: 0;
+}
+
+.boxRegistros p, .boxIzquierda .registroLargo p{
+    margin: 0;
+    font-size: 17px;
+}
+.boxRegistros .registroLargo, .boxRegistros .registroCorto, .boxIzquierda .registroLargo{
+    display: flex;
+    text-align: end;
+    margin: 1.5% 0;
+}
+.boxRegistros .registroLargo input, .boxRegistros .registroCorto input, .boxIzquierda .registroLargo input{
+    margin: 0 10px;
+    height: 22px;
+    border-radius: 25px;
+}
+.boxRegistros .registroLargo p{
+    width: 25%;
+}
+.boxRegistros .registroCorto p.segundo{
+    width: 12%;
+}
+.registroLargo {
+    justify-content: center;
+}
+.registroCorto{
+    justify-content: end;
+}
+
+.boxRegistros .registroLargo input{
+    width: 65%;
+}
+.boxRegistros .registroCorto input{
+    width: 22%;
+    margin-right: 3%;
+}
+.registroLargo input.btnGuardar, .registroLargo input.btnCancelar{
+    font-family: 'Oswald', sans-serif;
+    width: 40%;
+    height: 40px;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+}
+.registroLargo input.btnGuardar{
+    background-color: #69FF43;
+}
+.registroLargo input.btnCancelar{
+    background-color: #FF665C;
+}
+.registroLargo input.btnGuardar:hover, .registroLargo input.btnCancelar:hover{
+    width: 50%;
+    height: 43px;
+}
+/**Estados INICIO*/
+.estados{
+    margin: 20px 0!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.estados label, .estados input[type="radio"]{
+    cursor: pointer;
+}
+.estados label{
+    font-size: 20px;
+    color: white;
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+}
+.estados label.aceptado{
+    color: #69FF43;
+}
+.estados label.archivado{
+    color: #FDEC54;
+}
+.estados label.rechazado{
+    color: #FF665C;
+}
+
+/*!ocultar*/
+.content-input input,
+.content-select select{
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+.content-input input{
+	visibility: hidden;
+	position: absolute;
+	right: 0;
+}
+
+/*!personalizar*/
+
+.content-input{
+	position: relative;
+	margin-bottom: 30px;
+	padding:5px 0 5px 60px; /* Damos un padding de 60px para posicionar el elemento <i> en este espacio*/
+	display: block;
+}
+
+/* Estas reglas se aplicarán a todos las elementos i después de cualquier input*/
+.content-input input + i{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.estados label.aceptado input + i{
+    border:2px solid #69FF43;
+}
+
+.estados label.archivado input + i{
+    border:2px solid #FDEC54;
+}
+
+.estados label.rechazado input + i{
+    border:2px solid #FF665C;
+}
+/* Estas reglas se aplicarán a todos los i despues de un input de tipo radio*/
+.content-input input[type=radio] + i{
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    left: 15px;
+    top: 5px;
+}
+
+/*!circulo centro*/
+
+.content-input input[type=radio] + i:before{
+	content: '';
+	display: block;
+	height: 12px;
+	width: 12px;
+	border-radius: 100%;
+	position: absolute;
+	z-index: 1;
+	top: 4px;
+	left: 4px;
+	transition: all 0.25s ease; /* Todas las propiedades | tiempo | tipo movimiento */
+	transform: scale(0) /* Lo reducimos a 0*/ ;
+	opacity: 0; /* Lo ocultamos*/
+}
+
+.estados label.aceptado input[type=radio] + i:before{
+	background: #69FF43;
+}
+
+.estados label.archivado input[type=radio] + i:before{
+    background:#FDEC54;
+}
+
+.estados label.rechazado input[type=radio] + i:before{
+    background: #FF665C;
+}
+
+/*!efectos */
+
+.content-input input[type=radio]:checked + i:before{
+	transform: scale(1);
+	opacity: 1;
+}
+.estados label.aceptado:hover input[type=radio]:not(:checked) + i{
+	background: #69FF4380;
+}
+.estados label.archivado:hover input[type=radio]:not(:checked) + i{
+    background:#FDEC5480;
+}
+.estados label.rechazado:hover input[type=radio]:not(:checked) + i{
+    background: #FF665C80;
+}
+
+
+/**Estados FIN*/
+
+/*barra izquierda busqueda*/
+.boxIzquierda .registroLargo p{
+    font-weight: 600;
+}
+.boxIzquierda .registroLargo input{
+    width: 75%;
+}
+
+/*Buscador Izquierda*/
+.resultsBusqueda{
+background-color: #FFFFFF80;
+width: 100%;
+}
+
+.boxIzquierda .resultsBusqueda table.tableDatos tr.principal{
+    background-color: #3E7DC4;
+    border-radius: 15px;
+}
+.boxIzquierda .resultsBusqueda table.tableDatos tr.principal th{
+    padding: 10px;
+}
+.boxIzquierda .resultsBusqueda table.tableDatos tr td{
+    padding: 10px;
+}
+.boxIzquierda th,.boxIzquierda td {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+.boxIzquierda th{
+    border-top: 1px solid white;
+    position: sticky;
+}
+
+.boxIzquierda th:first-child{
+    width: 5%;
+    border-left: 1px solid white;
+    border-radius: 20px 0 0 0;
+}
+.boxIzquierda th:nth-child(2n){
+    width: 20%;
+}
+.boxIzquierda th:nth-child(3n){
+    width: 20%;
+}
+.boxIzquierda th:nth-child(4n){
+    width: 20%;
+}
+.boxIzquierda th:nth-child(5n){
+    width: 15%;
+}
+.boxIzquierda th:nth-child(6n){
+    width: 10%;
+}
+/*redondear*/
+.resultsBusqueda{
+    border-radius: 20px 10px 10px 20px;
+}
+/*Scrooll Bar*/
+.resultsBusqueda{
+    height: 80vh;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.resultsBusqueda::-webkit-scrollbar-thumb{
+    background-color: #3E7DC4;
+    border: 2px solid white;
+    border-radius: 25px;
+    width: 15px;
+}
+.resultsBusqueda::-webkit-scrollbar {
+    background-color: white;
+    border-radius: 25px;
+    width: 15px;
+}
+/**Cambio de colores estados*/
+.resultsBusqueda .tableDatos .aceptado td{
+    /*color: #69FF43;*/
+    color: #008f39;
+}
+.resultsBusqueda .tableDatos .archivado td{
+    /*color: #FDEC54;*/
+    color: #FFFF00;
+}
+.resultsBusqueda .tableDatos .rechazado td{
+    /*color: #FF665C;*/
+    color: #FF0000;
+}
+/*Quedarse quieto arriba*/
+.boxIzquierda tbody{
+    position: relative;
+    width: 100%;
+}
+.principal{
+    position: sticky;
+    top: 0;
+}
+.tableDatos{
+    position: relative;
+}
+/*Botones Acciones CRUD*/
+/*Posicionar botones al costado*/
+.btnAcciones{
+    display: flex;
+    flex-direction: row;
+}
+.btnCambio, .btnDelete{
+    width: 50%;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin: 0 3px;
+}
+/*Cambio*/
+.btnCambio{
+    background-color: #FDEC54;
+}
+/*Eliminar*/
+.btnDelete{
+    background-color: #FD5454;
+}
+
+/*Boton de regresar*/
+
+a.regresar{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 0 3%;
+    background-color: #FF665C;
+    border-radius: 15px 0 0 0 ;
+    text-decoration:none;
+}
+a.regresar p{
+    margin: 5px 0;
+    font-size: 24px;
+}
+
