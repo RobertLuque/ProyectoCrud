@@ -1,25 +1,26 @@
 <?php
 //Datos de la persona
-
-$nombre = utf8_encode($_POST['nombre']);
-$apellido = utf8_encode($_POST['apellido']);
-$cargo = utf8_encode($_POST['cargo']);
-$celular = utf8_encode($_POST['cell']);
-$correo = utf8_encode($_POST['correo']);
+$nombre = $_POST['nombre'];
+$apellido = $_POST['apellido'];
+$cargo = $_POST['cargo'];
+$celular = $_POST['cell'];
+$correo = $_POST['correo'];
 //Datos de la municipalidad
-$nombreMunicipio = utf8_encode($_POST['nombreMunicipio']);
-$direccion = utf8_encode($_POST['direccion']);
-$distrito = utf8_encode($_POST['distrito']);
-$provincia = utf8_encode($_POST['provincia']);
-$region = utf8_encode($_POST['region']);
-$telefono = utf8_encode($_POST['telefono']);
-$correoMunicipal = utf8_encode($_POST['correoMunicipal']);
-$paginaWeb = utf8_encode($_POST['paginaWeb']);
+$nombreMunicipio = $_POST['nombreMunicipio'];
+$direccion = $_POST['direccion'];
+$distrito = $_POST['distrito'];
+$provincia = $_POST['provincia'];
+$region = $_POST['region'];
+$telefono = $_POST['telefono'];
+$correoMunicipal = $_POST['correoMunicipal'];
+$paginaWeb = $_POST['paginaWeb'];
 $estado = "archivado";
 
-include("fm_conexion.php");
+
+//$enlace = mysqli_connect("127.0.0.1", "mi_usuario", "mi_contraseña", "mi_bd");
+$enlace = mysqli_connect("localhost", "root", "1234", "femulp");
 //Codigo sql
-$sql = "INSERT INTO registros (idPerson, nombres, apellidos, cargo, celular, correo, nombreMunicipio, direccion, distrito, provincia, region, telefono, correoMunicipal, paginaWeb, estado, fecha) VALUES ( NULL,'$nombre', '$apellido', '$cargo', $celular, '$correo', '$nombreMunicipio', '$direccion', '$distrito', '$provincia', '$region', $telefono, '$correoMunicipal', '$paginaWeb', '$estado', NOW())";
+$sql = "INSERT INTO registros (idPerson, nombres, apellidos, cargo, celular, correo, nombreMunicipio, direccion, distrito, provincia, region, telefono, correoMunicipal, paginaWeb, estado) VALUES ( NULL,'$nombre', '$apellido', '$cargo', $celular, '$correo', '$nombreMunicipio', '$direccion', '$distrito', '$provincia', '$region', $telefono, '$correoMunicipal', '$paginaWeb', '$estado')";
 
 //mysql_query envia una sentencia a la base de datos
 
@@ -39,7 +40,7 @@ $header .= "X-Mailer: PHP/" . phpversion();
 $asunto = "Nuevo Registro de datos Personal";
 $mensaje = "Datos Registrados \n Representante Legal \n nombre: $nombre \n apellido: $apellido \n cargo: $cargo \n celular: $celular \n correo: $correo \n";
 
-$mensaje .= "Datos de Municipalidad \n Nombre de Municipio: $nombreMunicipio \n Dirección: $direccion \n Distrito: $distrito \n Provincia: $provincia \n Región: $region \n Teléfono: $telefono \n Correo: $correoMunicipal \n Página Web: $paginaWeb \n Estado: $estado \n Fecha: $fecha";
+$mensaje .= "Datos de Municipalidad \n Nombre de Municipio: $nombreMunicipio \n Dirección: $direccion \n Distrito: $distrito \n Provincia: $provincia \n Región: $region \n Teléfono: $telefono \n Correo: $correoMunicipal \n Página Web: $paginaWeb";
 
 //*Funcion mail = (a Quien se le va a enviar, asunto, mensaje, header)
 $mail = mail($correo, $asunto, $mensaje, $header);
